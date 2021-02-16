@@ -1,0 +1,12 @@
+Notes on an HTML + CSS + JS example
+------------------------------------------------------------
+
+1. Main HTML file is js-1.html, a web page.
+2. Sibling folder (at same level as .html) is "assets".
+3. Web page links to (loads) assets/styles.css, a very simple CSS file.
+4. Web page has some HTML markup for title, header and text.
+5. After body, web page loads a script file from assets with fcns.
+6. After that, another Script section defines another function.
+7. And then runs some "loose" Javascript commands.
+
+8. Drag and drop the html file onto a browser to see what it does.
