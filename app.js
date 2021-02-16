@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();  // Init an Express object.
 app.use(express.static(__dirname + '/'));
 app.get('/', function (req, res) { // Set page-gen fcn for URL root request.
-    res.sendFile('')
+    res.sendFile('js-1.html', {root : __dirname});
 });
 
 app.get('/get_form_text', function(req, res) {
