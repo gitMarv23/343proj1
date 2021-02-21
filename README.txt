@@ -1,4 +1,11 @@
-# 343proj1
+CECS 343 Section 06
+
+Project Name: WTHAWD-MJALS
+
+Team Name: MJALS
+Members: Marvin Barajas, Jessica Banuelos, Aster Lee, Leon Chen, Sebastian Valencia
+
+
 Readme file coverage necessities:
     - Class number and section
     - Project Name
@@ -10,11 +17,3 @@ Readme file coverage necessities:
     - Sample invocation and results to see
     - Features
     - Bugs (if any)
-
-CECS 343 Section 06
-
-Project Name: WTHAWD-MJALS
-
-Team Name: MJALS
-Members: Marvin Barajas, Jessica Banuelos, Aster Lee, Leon Chen, Sebastian Valencia
-
