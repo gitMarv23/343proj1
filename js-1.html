@@ -1,9 +1,27 @@
-<!doctype html><html><head>
+<!doctype html><html lang=""><head>
 <title>This is an HTML canvas</title>
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body><h1>Playing the HTML canvas</h1>
-<h4>Time-stamp: <2019-01-21 20:11:03 Chuck Siska></h4>
+
+<form action="/get_form_text" method="GET">
+    <label> Get form text</label>
+    <input type="text" id="cmdInput" name="cmdIn" required/>
+    <input type="submit" value="Click me to run cmd" />
+
+</form>
+
+<form action="/create_repo" method="GET">
+    <label> Source Path:
+        <input type="text" id="sourcePath" name="source_path" required/>
+    </label>
+
+    <label> Target Path:
+        <input type="text" id="targetPath" name="target_path" required/>
+    </label>
+
+    <input type="submit" required/>
+</form>
 
 <canvas id="grid" width="400" height="400"></canvas>
 
