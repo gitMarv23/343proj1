@@ -17,6 +17,26 @@ app.listen(3000, function () { // Set callback action fcn on network port.
     console.log('App.js listening on port 3000!');
 });
 
+// sourceDir is the snapshot directory
+// destDir is where the manifest file is created
+function makeManifestFile(sourceDir, destDir){
+    const fs = require("fs");
+
+    var fileNameAndPath = destDir + "manifest.txt"
+    fs.writeFile(fileNameAndPath, "", function(err){
+        if(err) throw err;
+        console.log(`Created file at ${destDir} for snapshot ${sourceDir}`);
+    });
+
+    fs.readdir(sourceDir, (err, files) => {
+       files.forEach(file => {
+           fs.appendFile(fileNameAndPath, file, function(err){
+               if(err) throw err;
+           })
+       });
+    });
+}
+
 function getFilePathCheckSum(filepath){
     var fileTextSum = getTextCheckSum(filepath);
     return fileTextSum.slice(-2, fileTextSum.length);
