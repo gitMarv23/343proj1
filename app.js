@@ -13,6 +13,7 @@ app.get('/get_form_text', function(req, res) {
     res.redirect('/');
 });
 
+
 app.listen(3000, function () { // Set callback action fcn on network port.
     console.log('App.js listening on port 3000!');
 });
@@ -29,11 +30,11 @@ function makeManifestFile(sourceDir, destDir){
     });
 
     fs.readdir(sourceDir, (err, files) => {
-       files.forEach(file => {
-           fs.appendFile(fileNameAndPath, file, function(err){
-               if(err) throw err;
-           })
-       });
+        files.forEach(file => {
+            fs.appendFile(fileNameAndPath, file, function(err){
+                if(err) throw err;
+            })
+        });
     });
 }
 
