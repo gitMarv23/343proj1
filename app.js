@@ -20,18 +20,19 @@ app.listen(3000, function () { // Set callback action fcn on network port.
 
 // sourceDir is the snapshot directory
 // destDir is where the manifest file is created
-function makeManifestFile(sourceDir, destDir){
+function makeManifestFile(sourceDir, destDir, commandLineused){
+    //const dt = require("dateformat");
     const fs = require("fs");
 
-    var fileNameAndPath = destDir + "manifest.txt"
-    fs.writeFile(fileNameAndPath, "", function(err){
+    var fileNameAndPath = destDir + "/.manifest.txt"
+    fs.writeFile(fileNameAndPath, commandLineused + "\n" + new Date().toISOString(), function(err){
         if(err) throw err;
         console.log(`Created file at ${destDir} for snapshot ${sourceDir}`);
     });
 
     fs.readdir(sourceDir, (err, files) => {
         files.forEach(file => {
-            fs.appendFile(fileNameAndPath, file, function(err){
+            fs.appendFile(fileNameAndPath, file + "\n", function(err){
                 if(err) throw err;
             })
         });
