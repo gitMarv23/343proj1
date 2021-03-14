@@ -13,17 +13,16 @@ app.get('/get_form_text', function(req, res) {
     res.redirect('/');
 });
 
-
 app.listen(3000, function () { // Set callback action fcn on network port.
     console.log('App.js listening on port 3000!');
 });
 
 // sourceDir is the snapshot directory
 // destDir is where the manifest file is created
-function makeManifestFile(sourceDir, destDir, commandLineused){
+function makeManifestFile(sourceDir, destDir, commandLineused, manifestNumber){
     const fs = require("fs");
 
-    var fileNameAndPath = destDir + "/.manifest.txt"
+    var fileNameAndPath = destDir + `/.man-${manifestNumber}-.rc`
     fs.writeFile(fileNameAndPath, commandLineused + "\n" + new Date().toISOString() + "\n", function(err){
         if(err) throw err;
         console.log(`Created file at ${destDir} for snapshot ${sourceDir}`);
