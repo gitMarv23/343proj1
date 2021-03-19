@@ -1,0 +1,22 @@
+{
+  "name": "343proj1",
+  "version": "1.0.0",
+  "description": "VCS Repository",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitMarv23/343proj1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gitMarv23/343proj1/issues"
+  },
+  "homepage": "https://github.com/gitMarv23/343proj1#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
