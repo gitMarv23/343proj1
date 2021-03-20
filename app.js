@@ -20,7 +20,7 @@ app.listen(3000, function () { // Set callback action fcn on network port.
 // sourceDir is the snapshot directory
 // destDir is where the manifest file is created
 function makeManifestFile(sourceDir, destDir, commandLineused, manifestNumber){
-    const fs = require("fs");
+    const fs = require('fs');
 
     var fileNameAndPath = destDir + `/.man-${manifestNumber}-.rc`
     fs.writeFile(fileNameAndPath, commandLineused + "\n" + new Date().toISOString() + "\n", function(err){
