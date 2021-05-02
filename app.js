@@ -13,8 +13,8 @@ app.get('/get_form_text', function(req, res) {
     res.redirect('/');
 });
 
-app.listen(3000, function () { // Set callback action fcn on network port.
-    console.log('App.js listening on port 3000!');
+app.listen(4000, function () { // Set callback action fcn on network port.
+    console.log('App.js listening on port 4000!');
 });
 
 function getFilePathCheckSum(filepath){
