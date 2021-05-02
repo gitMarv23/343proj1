@@ -12,12 +12,10 @@ app.get('/', function (req, res) { // Set page-gen fcn for URL root request.
 app.get('/get_form_text', function(req, res) {
     var myText = req.query.cmdIn;
     console.log(myText);
-
     console.log(getTextCheckSum(myText));
-    //res.redirect('/');
-
     console.log(req.body);
     console.log("dir is " + __dirname)
+    
     switch (myText) {
         //redirects to the label page where a user can enter a custom label to identify a manifest file
         case "label":
