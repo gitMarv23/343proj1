@@ -81,7 +81,10 @@ External Requirements:
     page.
     Escape your CLI via the std keystroke (eg, control-C. maybe).
 
-    From our main webpage you can type help in the "get form text" prompt to view a list of commnads
+    8. Install missing dependencies by executing the following
+        npm install ejs
+
+    From our main webpage you can type "help" in the "get form text" prompt to view a list of commnads
 
 Bugs as of 2/20/2021 compilation:
     Redirection of source and target paths
