@@ -54,7 +54,25 @@ app.get('/help', function (req, res) {
     res.render('help');
 });
 
+// sourceDir is the snapshot directory
+// destDir is where the manifest file is created
+function makeManifestFile(sourceDir, destDir, commandLineused, manifestNumber){
+    const fs = require("fs");
 
+    var fileNameAndPath = destDir + `/.man-${manifestNumber}-.rc`
+    fs.writeFile(fileNameAndPath, commandLineused + "\n" + new Date().toISOString() + "\n", function(err){
+        if(err) throw err;
+        console.log(`Created file at ${destDir} for snapshot ${sourceDir}`);
+    });
+
+    fs.readdir(sourceDir, (err, files) => {
+        files.forEach(file => {
+            fs.appendFile(fileNameAndPath, file + "\n", function(err){
+                if(err) throw err;
+            })
+        });
+    });
+}
 
 function getFilePathCheckSum(filepath){
     var fileTextSum = getTextCheckSum(filepath);
