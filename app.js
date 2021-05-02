@@ -54,6 +54,8 @@ app.get('/help', function (req, res) {
     res.render('help');
 });
 
+
+
 function getFilePathCheckSum(filepath){
     var fileTextSum = getTextCheckSum(filepath);
     return fileTextSum.slice(-2, fileTextSum.length);
@@ -88,3 +90,4 @@ app.post('/help', (req, res) => {
     console.log("going back to main page");//displays a list of valid commands to the user and then redirects the user back to the main page
     res.redirect('/');
 });
+
