@@ -19,14 +19,6 @@ app.get('/get_form_text', function(req, res) {
     console.log(req.body);
     console.log("dir is " + __dirname)
     switch (myText) {
-        //redirects to the upload page
-        case "upload":
-            res.redirect('/upload');
-            break;
-        //redirects to the download page(NOT FULLY FUNCTIONAL)
-        case "download":
-            res.redirect('/download');
-            break;
         //redirects to the label page where a user can enter a custom label to identify a manifest file
         case "label":
             res.redirect('/label');
