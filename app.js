@@ -109,6 +109,21 @@ function labelManifest(){
 
 }
 
+
+app.get("/checkin", (req, res) => {
+   console.log("checking in");
+   const fse = require('fs-extra');
+
+   function copyTree(sourceDir, destDir){
+        makeManifestFile(sourceDir, destDir, "", 1); // "" and 1 as placeholder
+
+        fse.copySync(sourceDir, destDir, function (err){
+            if (err) console.log("error when checking in (copy file)");
+            else console.log("checked in");
+        });
+   }
+});
+
 app.post('/help', (req, res) => {
     console.log("going back to main page");//displays a list of valid commands to the user and then redirects the user back to the main page
     res.redirect('/');
