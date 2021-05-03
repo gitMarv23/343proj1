@@ -108,7 +108,7 @@ function getTextCheckSum(text){
 //create manifest file
 app.get('/create', (req, res) => {
     console.log("creating new repository");
-    makeManifestFile('repos', 'repos', 'create', 1)
+    makeManifestFile('/', 'repos', 'create', 1)
     res.redirect("/");
 });
 
