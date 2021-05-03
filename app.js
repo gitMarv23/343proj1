@@ -16,19 +16,17 @@ app.get('/get_form_text', function(req, res) {
     console.log(req.body);
     console.log("dir is " + __dirname)
     
+    //options for navigation and functionality
     switch (myText) {
-        //redirects to the label page where a user can enter a custom label to identify a manifest file
         case "label":
             res.redirect('/label');
             break;
         case "list":
             res.redirect('/list');
             break;
-        //redirects to the help page, here the user can see a list of supported commands
         case "help":
             res.redirect('/help');
             break;
-        //redirects to the create repo page
         case "create":
             res.redirect('/create');
             break;
@@ -38,7 +36,6 @@ app.get('/get_form_text', function(req, res) {
          case "checkout":
             res.redirect('/checkout');
             break;
-        //if none of the above commands are entered it will redirect the user back to the main page to try again.
         default:
             console.log("no command exists with the name " + myText);
             res.redirect('/');
