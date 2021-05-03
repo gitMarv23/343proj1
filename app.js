@@ -51,6 +51,12 @@ app.get('/help', function (req, res) {
     res.render('help');
 });
 
+//user returns to main screen after clicking home button
+app.post('/help', (req, res) => {
+    console.log("going back to main page");
+    res.redirect('/');
+});
+
 // sourceDir is the snapshot directory
 // destDir is where the manifest file is created
 function makeManifestFile(sourceDir, destDir, commandLineused, manifestNumber){
@@ -78,9 +84,7 @@ function getFilePathCheckSum(filepath){
 
 function intToHex(myInt){
     var myIntHex = myInt.toString(16)
-    myIntHex = myIntHex.toString();
-    while(myIntHex.length < 4) myIntHex = "0" + myIntHex; // pads with leading zeroes
-
+    myIntHex = myIntHex.toString();console.log("help page access");
     return myIntHex;
 }
 
@@ -101,13 +105,21 @@ function getTextCheckSum(text){
     return hexCheckSum;
 }
 
-//displays a list of valid commands to the user and then redirects the user back to the main page
-app.post('/help', (req, res) => {
-    console.log("going back to main page");
-    res.redirect('/');
+//create manifest file
+app.get('/create', (req, res) => {
+    console.log("creating new repository");
+    makeManifestFile()
+    res.redirect("/");
 });
 
-app.get('/create', (req, res) => {
-    
+//list manifest names and labels
+app.get('/list', function (req, res) {
+    console.log("going to repos list");
+    res.render('list');
+});
+
+//user returns to main screen after clicking home button
+app.post('/list', (req, res) => {
+    console.log("going back to main page");
     res.redirect("/");
 });
