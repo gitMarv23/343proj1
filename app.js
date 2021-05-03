@@ -106,7 +106,7 @@ app.post('/help', (req, res) => {
     res.redirect('/');
 });
 
-app.post('/create', (req, res) => {
+app.get('/create', (req, res) => {
     
     res.redirect("/");
 });
