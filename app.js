@@ -101,8 +101,9 @@ function getTextCheckSum(text){
     return hexCheckSum;
 }
 
+//displays a list of valid commands to the user and then redirects the user back to the main page
 app.post('/help', (req, res) => {
-    console.log("going back to main page");//displays a list of valid commands to the user and then redirects the user back to the main page
+    console.log("going back to main page");
     res.redirect('/');
 });
 
