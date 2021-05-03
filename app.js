@@ -1,5 +1,9 @@
 var express = require('express');
 var app = express();  // Init an Express object.
+
+//view engine setup
+app.set('view engine', 'ejs');
+
 app.use(express.static(__dirname + '/'));
 app.get('/', function (req, res) { // Set page-gen fcn for URL root request.
     res.sendFile('js-1.html', {root : __dirname});
@@ -8,13 +12,43 @@ app.get('/', function (req, res) { // Set page-gen fcn for URL root request.
 app.get('/get_form_text', function(req, res) {
     var myText = req.query.cmdIn;
     console.log(myText);
-
     console.log(getTextCheckSum(myText));
-    res.redirect('/');
+    // console.log(req.body);
+    console.log("dir is " + __dirname)
+
+    //options for navigation and functionality
+    switch (myText) {
+        case "label":
+            res.redirect('/label');
+            break;
+        case "list":
+            res.redirect('/list');
+            break;
+        case "help":
+            res.redirect('/help');
+            break;
+        case "create":
+            res.redirect('/create');
+            break;
+        case "checkin":
+            res.redirect('/checkin');
+            break;
+        case "checkout":
+            res.redirect('/checkout');
+            break;
+        default:
+            console.log("no command exists with the name " + myText);
+            res.redirect('/');
+    }});
+
+app.listen(4000, function () { // Set callback action fcn on network port.
+    console.log('App.js listening on port 4000!');
 });
 
-app.listen(3000, function () { // Set callback action fcn on network port.
-    console.log('App.js listening on port 3000!');
+//allows the user to access help list of commands
+app.get('/help', function (req, res) {
+    console.log("help page access");
+    res.render('help');
 });
 
 // sourceDir is the snapshot directory
@@ -66,3 +100,22 @@ function getTextCheckSum(text){
 
     return hexCheckSum;
 }
+
+function listManifest(){
+
+}
+
+function labelManifest(){
+
+}
+
+app.post('/help', (req, res) => {
+    console.log("going back to main page");//displays a list of valid commands to the user and then redirects the user back to the main page
+    res.redirect('/');
+});
+
+app.get('/create', (req, res) => {
+    console.log("at create")
+
+    res.redirect("/");
+});
