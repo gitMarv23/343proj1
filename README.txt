@@ -73,9 +73,9 @@ External Requirements:
 
         node app.js
 
-    See "App.js listening on port 3000!" in your CLI.
+    See "App.js listening on port 4000!" in your CLI.
 
-    7. In your browser, go to the website at: http://localhost:3000/
+    7. In your browser, go to the website at: http://localhost:4000/
     You should see your "Hello World!" webpage.
     Now, change your webpage html to do what you want, and reload the
     page.
